@@ -1,157 +1,219 @@
-# AWS Agent System
+# AI System Configuration Management
 
-A reusable repository of agent context, rules, skills, and templates for AWS architecture, DevOps, and software delivery work.
+A reusable multi-package repository for configuring AI agents that support business analysis, governance design, data product work, and AWS architecture/delivery.
 
-The goal is to help AI agents and humans produce solutions that consistently reflect:
-- AWS Well-Architected thinking
-- Solutions Architect Professional judgment
-- DevOps Engineer Professional delivery discipline
-- pragmatic software engineering and SDLC best practices
+This repository is designed as a modular decision-support system.
 
-## Why this repository exists
-AWS knowledge often stays trapped in:
-- certification notes
-- individual experience
-- tribal team habits
-- scattered design reviews
+It helps agents and humans move from:
 
-This repository turns that knowledge into reusable operating guidance.
+**business need → analysis → governance/semantics → data/product design → technical delivery**
 
-It is meant to improve:
-- architecture quality
-- consistency of design decisions
-- infrastructure reviews
-- CI/CD quality
-- security posture
-- operational readiness
-- documentation quality
+rather than jumping straight into tools, tickets, or architecture diagrams like caffeinated raccoons.
+
+---
+
+## Purpose
+
+This repository exists to make AI-assisted work:
+- more structured
+- more reusable
+- more traceable
+- more stage-aware
+- more grounded in real delivery and operating constraints
+
+It is not just a collection of prompts.
+It is an operating system for how agents should reason across different domains.
+
+---
+
+## Repository philosophy
+
+### 1. Start from the problem
+Do not start from tools, platforms, or implementation patterns before understanding the actual problem.
+
+### 2. Separate layers of reasoning
+A business problem, a governance implication, a data implication, and a technical design are related — but they are not the same thing.
+
+### 3. Use the right specialist package
+Not every problem should be solved in the same package.
+This repository is deliberately modular.
+
+### 4. Prefer value over ceremonial complexity
+The goal is not to produce bigger documents.
+The goal is to improve clarity, design quality, and implementation realism.
+
+### 5. Preserve traceability
+Important decisions, assumptions, scope choices, and trade-offs should remain visible.
+
+### 6. Think visually when useful
+If a diagram helps explain the problem, the structure, the flow, or the ownership model, the agent should create one.
+
+---
 
 ## Repository structure
 
-### `AGENTS.md`
-Global operating doctrine for the agent.
-Defines how the agent should think, what it should optimize for, and which anti-patterns it should challenge.
+### Root files
+- `AGENTS.md` — top-level orchestration doctrine for the whole system
+- `README.md` — top-level explanation of how the system works
 
-### `rules/`
-Non-negotiable review and design rules.
-These are persistent guardrails.
+### `governance/`
+Repository-governance artifacts for maintaining this system over time:
+- contribution guidance
+- review criteria for repo changes
+- versioning rules
+- changelog discipline
+- package evolution ADR templates
 
-Examples:
-- architecture principles
-- security baseline
-- IaC standards
-- delivery engineering rules
-- observability and operations
-- cost and FinOps
-- SDLC discipline
+### `shared/`
+Cross-cutting principles that apply across all packages:
+- common operating principles
+- stage awareness
+- decision logging
+- visual thinking
+- implementation pragmatism
 
-### `skills/`
-Reusable expert workflows.
-A skill explains when to use a capability, what inputs it expects, how it reasons, and what structured output it should produce.
+### `shared/playbooks/`
+Scenario-based orchestration guides showing how packages work together.
 
-Examples:
-- design AWS solution
-- review Terraform
-- review CI/CD pipeline
-- run threat model
-- assess Well-Architected risks
+### `BUSINESS-ANALYSIS/`
+Use this package when the main need is:
+- clarifying the business problem
+- defining stakeholders and capabilities
+- deriving use cases
+- shaping requirements
+- defining MVP scope
+- modeling business processes
 
-### `templates/`
-Reusable output formats for common artifacts.
+### `COLLIBRA/`
+Use this package when the main need is:
+- clarifying concepts and semantics
+- defining ownership and accountability
+- designing governance artifacts
+- translating business meaning into Collibra structures
+- linking governance to technical assets
 
-Examples:
-- ADR
-- architecture review
-- deployment plan
-- runbook
-- postmortem
-- service README
-- PR template
+### `DATA/`
+Use this package when the main need is:
+- defining a data product
+- shaping a data MVP
+- designing data flows or pipelines
+- making quality and ownership explicit
+- managing the data lifecycle
 
-## How to use
+### `AWS/`
+Use this package when the main need is:
+- designing technical architecture
+- evaluating AWS implementation options
+- reviewing IaC or CI/CD
+- applying Well-Architected and delivery rigor
+- preparing for production
 
-### For architecture design
+---
+
+## Package selection logic
+
+### Start with `BUSINESS-ANALYSIS/` when:
+- the request is vague
+- the problem is not yet clear
+- the scope is contested
+- stakeholders disagree
+- process or capability understanding is missing
+
+### Start with `COLLIBRA/` when:
+- terms are ambiguous
+- governance or ownership is central
+- the problem is semantic, policy-oriented, or accountability-related
+- business meaning must connect to metadata structures
+
+### Start with `DATA/` when:
+- the output is a data product, dataset, metric layer, or analytics capability
+- the main concern is sources, transformations, quality, lineage, or serving
+
+### Start with `AWS/` when:
+- the business need is already well understood
+- the implementation direction is mainly technical
+- delivery architecture, infrastructure, or DevOps rigor is central
+
+---
+
+## End-to-end flow
+
+A typical end-to-end path looks like this:
+
+1. `BUSINESS-ANALYSIS/`
+   - frame the problem
+   - identify stakeholders
+   - derive use cases
+   - define MVP scope
+
+2. `COLLIBRA/`
+   - clarify concepts
+   - define ownership
+   - map governance artifacts
+   - design governance workflows if needed
+
+3. `DATA/`
+   - define data product implications
+   - design pipeline or analytics flow
+   - define quality and lineage expectations
+
+4. `AWS/`
+   - define technical architecture
+   - define deployment and operational patterns
+   - apply delivery and production rigor
+
+Not every initiative needs all four packages.
+
+---
+
+## Example scenario patterns
+
+### Business problem to governance use case
 Use:
-- `AGENTS.md`
-- `rules/architecture-principles.md`
-- `rules/well-architected-review.md`
-- `skills/design-solution.skill.md`
-- `templates/architecture-review-template.md`
+- `BUSINESS-ANALYSIS/`
+- `COLLIBRA/`
 
-### For Terraform review
+### Business problem to data MVP
 Use:
-- `AGENTS.md`
-- `rules/iac-standards.md`
-- `rules/security-baseline.md`
-- `skills/review-terraform.skill.md`
-- `templates/pr-template.md`
+- `BUSINESS-ANALYSIS/`
+- `DATA/`
 
-### For CI/CD review
+### Governance-led data initiative
 Use:
-- `rules/delivery-engineering.md`
-- `rules/testing-and-quality-gates.md`
-- `skills/review-ci-cd.skill.md`
-- `templates/deployment-plan-template.md`
+- `BUSINESS-ANALYSIS/`
+- `COLLIBRA/`
+- `DATA/`
 
-### For threat modeling
+### End-to-end product delivery on AWS
 Use:
-- `rules/security-baseline.md`
-- `skills/threat-model.skill.md`
-- `templates/threat-model-template.md`
+- `BUSINESS-ANALYSIS/`
+- `DATA/`
+- `AWS/`
 
-### For production readiness reviews
+### Metadata/governance-driven operating model initiative
 Use:
-- `rules/observability-and-operations.md`
-- `rules/well-architected-review.md`
-- `skills/well-architected-assessment.skill.md`
-- `templates/incident-runbook-template.md`
+- `BUSINESS-ANALYSIS/`
+- `COLLIBRA/`
+- optionally `DATA/`
 
-## Design philosophy
+---
 
-### 1. Prefer clarity over tool worship
-Do not recommend a service because it is fashionable.
-Choose services that fit the problem, the team, and the operating model.
+## Recommended maintenance model
 
-### 2. Prefer managed simplicity
-When multiple options satisfy requirements, prefer the one with lower operational burden unless constraints justify otherwise.
+- keep packages modular
+- keep `governance/` focused on repo evolution rather than domain content
+- keep `shared/` small and cross-cutting
+- add new rules only when they are broadly reusable
+- add new skills only for repeated tasks
+- add new playbooks when multiple packages must be orchestrated together
+- record major design changes using decision logs
+- record meaningful repo-structure changes in `governance/CHANGELOG.md`
 
-### 3. Make trade-offs explicit
-Every serious design has trade-offs in security, resilience, cost, performance, and complexity.
-The agent must surface them.
-
-### 4. Treat operations as part of design
-A system is not ready because it deploys.
-It is ready when it can be observed, supported, recovered, and evolved safely.
-
-### 5. Use SDLC discipline
-Architecture without delivery discipline is theater.
-Delivery without architecture discipline is chaos.
-Both matter.
-
-## Recommended way to evolve this repository
-- keep rules stable and opinionated
-- keep skills practical and task-oriented
-- add templates only for outputs you actually reuse
-- version important changes
-- write ADRs for major modifications to this repository itself
-
-## Contribution guidance
-When adding new rules or skills:
-1. keep them concrete
-2. prefer decision heuristics over vague principles
-3. state when to use them
-4. state what anti-patterns they are meant to prevent
-5. avoid duplicating logic across files unless intentional
-
-## Suggested future additions
-- serverless patterns
-- event-driven architecture guidance
-- EKS platform guidance
-- multi-account operating model guidance
-- resilience testing guidance
-- data platform patterns
-- platform engineering golden paths
+---
 
 ## Warning
-This repository is a decision-support system, not a substitute for engineering judgment.
-Use it to improve decisions, not to outsource thinking.
+
+This repository is a reasoning system, not a substitute for judgment.
+
+It should make AI agents and humans more disciplined, not more verbose.
+It should reduce confusion, not produce prettier confusion.

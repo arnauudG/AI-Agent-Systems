@@ -1,65 +1,94 @@
-# [Service Name]
+# Threat Model: [System / Workload Name]
 
-## Purpose
-What does this service do?
-
-## Business context
-Who uses it and why does it exist?
+## Review status
+Draft | In Review | Accepted | Superseded
 
 ## Scope
 - In scope:
 - Out of scope:
 
+## Context
+What system or change is being reviewed, and why now?
+
+## Business impact
+- Primary user or stakeholder:
+- Critical business process supported:
+- Sensitivity of failure or compromise:
+
 ## Architecture summary
-Brief explanation of runtime architecture and main AWS services used.
+Briefly describe the workload, key AWS services, and major integrations.
 
-## Interfaces
-- Inputs:
-- Outputs:
+## Assets and trust boundaries
+### Assets to protect
+- Data:
+- Credentials / secrets:
+- Workloads:
+- Administrative paths:
+
+### Trust boundaries
+- Internet-facing boundaries:
+- Internal service boundaries:
+- Cross-account / cross-region boundaries:
+- Human admin boundaries:
+
+## Entry points
 - APIs:
-- Events:
-- Data stores:
+- Events / queues:
+- Batch or file ingestion:
+- Console / operator access:
+- Third-party integration paths:
 
-## Environments
-- dev
-- test
-- prod
+## Threat analysis
+### Spoofing
+- Threats:
+- Existing controls:
+- Gaps / follow-up:
 
-## Deployment
-How is this service built and deployed?
+### Tampering
+- Threats:
+- Existing controls:
+- Gaps / follow-up:
 
-## Configuration
-- Environment variables:
-- Secrets:
-- Feature flags:
-- Runtime parameters:
+### Repudiation
+- Threats:
+- Existing controls:
+- Gaps / follow-up:
 
-## Security
-- IAM roles:
-- Data classification:
-- Encryption:
-- Network exposure:
+### Information disclosure
+- Threats:
+- Existing controls:
+- Gaps / follow-up:
 
-## Observability
-- Logs:
-- Metrics:
-- Traces:
-- Dashboards:
-- Alerts:
+### Denial of service
+- Threats:
+- Existing controls:
+- Gaps / follow-up:
 
-## Operations
-- Common failure modes:
-- Recovery notes:
-- Runbooks:
-- Support contacts:
+### Elevation of privilege
+- Threats:
+- Existing controls:
+- Gaps / follow-up:
 
-## Cost notes
-Main cost drivers and any known cost traps.
-
-## Dependencies
-- Internal:
-- External:
-- AWS managed services:
-
-## Open issues / roadmap
+## Key assumptions
 - ...
+- ...
+
+## Top risks
+1. ...
+2. ...
+3. ...
+
+## Mitigations and recommendations
+### Must do before production
+- ...
+
+### Should do soon
+- ...
+
+### Accepted temporary risks
+- ...
+
+## Follow-up owners
+- Security owner:
+- Technical owner:
+- Review date:
