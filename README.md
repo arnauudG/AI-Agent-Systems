@@ -64,6 +64,21 @@ Repository-governance artifacts for maintaining this system over time:
 - changelog discipline
 - package evolution ADR templates
 
+### `claude/`
+Claude-facing entry guidance for using the repository as a reasoning framework:
+- routing guidance
+- minimal loading strategy
+- quick-start prompts
+- Claude-specific orchestration context
+
+### `cursor/`
+Cursor-facing entry guidance for using the repository as a reasoning framework:
+- routing guidance
+- minimal loading strategy
+- quick-start prompts
+- Cursor-specific orchestration context
+- compact repo rules for Cursor behavior
+
 ### `shared/`
 Cross-cutting principles that apply across all packages:
 - common operating principles
@@ -202,6 +217,8 @@ Use:
 
 - keep packages modular
 - keep `governance/` focused on repo evolution rather than domain content
+- keep `claude/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
+- keep `cursor/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
 - keep `shared/` small and cross-cutting
 - add new rules only when they are broadly reusable
 - add new skills only for repeated tasks
