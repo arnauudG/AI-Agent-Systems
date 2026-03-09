@@ -123,6 +123,13 @@ Use this package when the main need is:
 - applying Well-Architected and delivery rigor
 - preparing for production
 
+### `svg/`
+Use this package when the main need is:
+- creating or editing architecture diagrams, platform diagrams, or semantic visuals in SVG
+- keeping diagram structure consistent, legible, and editable
+- representing ownership, trust boundaries, access flows, or security architecture in diagrams
+- refactoring or simplifying existing SVG for maintainability
+
 ---
 
 ## Package selection logic
@@ -148,6 +155,11 @@ Use this package when the main need is:
 - the business need is already well understood
 - the implementation direction is mainly technical
 - delivery architecture, infrastructure, or DevOps rigor is central
+
+### Start with `svg/` when:
+- the task is to produce or edit SVG diagrams (architecture, platform, process, governance)
+- diagram output must be readable, semantically structured, and safe to edit manually
+- ownership, trust boundaries, or access patterns need to be represented accurately in visuals
 
 ---
 
@@ -205,6 +217,10 @@ Use:
 - `DATA/`
 - `AWS/`
 
+### Architecture or platform diagrams (SVG)
+Use:
+- `svg/` (and optionally `AWS/` for architecture content, `COLLIBRA/` for semantic/governance visuals)
+
 ### Metadata/governance-driven operating model initiative
 Use:
 - `BUSINESS-ANALYSIS/`
@@ -220,6 +236,7 @@ Use:
 - keep `claude/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
 - keep `cursor/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
 - keep `shared/` small and cross-cutting
+- keep `svg/` focused on structure, semantics, and editability (not tool-specific export formats)
 - add new rules only when they are broadly reusable
 - add new skills only for repeated tasks
 - add new playbooks when multiple packages must be orchestrated together
