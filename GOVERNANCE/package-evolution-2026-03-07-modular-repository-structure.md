@@ -19,8 +19,8 @@ Without an explicit structural decision, several risks appear:
 ## Decision
 Adopt a modular repository structure with:
 - specialist domain packages: `BUSINESS-ANALYSIS/`, `COLLIBRA/`, `DATA/`, `AWS/`
-- a `shared/` layer for cross-cutting rules, templates, and playbooks
-- a `governance/` layer for repository-level contribution, review, versioning, changelog, and package-evolution artifacts
+- a `SHARED/` layer for cross-cutting rules, templates, and playbooks
+- a `GOVERNANCE/` layer for repository-level contribution, review, versioning, changelog, and package-evolution artifacts
 
 Also normalize file naming and internal references so documented paths resolve consistently across the repository.
 
@@ -36,7 +36,7 @@ Also normalize file naming and internal references so documented paths resolve c
   - harder to scale specialist logic cleanly
 
 ### Option 2
-- Description: Use specialist packages plus `shared/`, but keep repo-governance artifacts mixed into root docs.
+- Description: Use specialist packages plus `SHARED/`, but keep repo-governance artifacts mixed into root docs.
 - Pros:
   - preserves package modularity
   - avoids introducing another folder
@@ -48,20 +48,20 @@ Also normalize file naming and internal references so documented paths resolve c
 ## Rationale
 The chosen structure creates a clearer operating model:
 - domain logic stays in domain packages
-- genuinely cross-cutting guidance stays in `shared/`
-- repository evolution concerns are handled explicitly in `governance/`
+- genuinely cross-cutting guidance stays in `SHARED/`
+- repository evolution concerns are handled explicitly in `GOVERNANCE/`
 
 This is the smallest structure that supports growth without letting duplication and structural drift accumulate invisibly.
 
 ## Impact
 - affected packages:
   - root orchestration
-  - `shared/`
+  - `SHARED/`
   - `BUSINESS-ANALYSIS/`
   - `COLLIBRA/`
   - `DATA/`
   - `AWS/`
-  - `governance/`
+  - `GOVERNANCE/`
 - backward compatibility impact:
   - low for content usage, but documented paths and naming are now more explicit
 - maintenance implications:

@@ -34,7 +34,7 @@ Load a playbook only if:
 - sequencing across domains matters
 
 ### Step 5
-Load `shared/` only when cross-cutting reinforcement is useful:
+Load `SHARED/` only when cross-cutting reinforcement is useful:
 - stage awareness
 - decision logging
 - visual thinking
@@ -108,7 +108,7 @@ Load:
 - `../COLLIBRA/README.md`
 - `../DATA/README.md`
 - `../AWS/README.md`
-- one relevant file from `../shared/playbooks/`
+- one relevant file from `../SHARED/playbooks/`
 
 Then add only the needed rules, skills, and templates from each package.
 

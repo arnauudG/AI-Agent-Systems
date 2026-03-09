@@ -23,17 +23,17 @@ Without dedicated entry layers, client usage risked becoming:
 
 ## Decision
 Add tool-facing folders as repository entry layers:
-- `claude/`
-- `../claude/CLAUDE.md` for Claude-specific orchestration context
-- `../claude/routing-guide.md` for package leadership decisions
-- `../claude/loading_strategy.md` for minimal context-loading discipline
-- `../claude/quick-start-prompts.md` for reusable starting prompts
-- `cursor/`
-- `../cursor/CURSOR.md` for Cursor-specific orchestration context
-- `../cursor/routing-guide.md` for package leadership decisions
-- `../cursor/loading_strategy.md` for minimal context-loading discipline
-- `../cursor/quick-start-prompts.md` for reusable starting prompts
-- `../cursor/repo-rules.md` for compact repository behavior rules
+- `CLAUDE/`
+- `../CLAUDE/CLAUDE.md` for Claude-specific orchestration context
+- `../CLAUDE/routing-guide.md` for package leadership decisions
+- `../CLAUDE/loading_strategy.md` for minimal context-loading discipline
+- `../CLAUDE/quick-start-prompts.md` for reusable starting prompts
+- `CURSOR/`
+- `../CURSOR/CURSOR.md` for Cursor-specific orchestration context
+- `../CURSOR/routing-guide.md` for package leadership decisions
+- `../CURSOR/loading_strategy.md` for minimal context-loading discipline
+- `../CURSOR/quick-start-prompts.md` for reusable starting prompts
+- `../CURSOR/repo-rules.md` for compact repository behavior rules
 
 These layers are interfaces to the repository, not new specialist domain packages.
 
@@ -49,13 +49,13 @@ These layers are interfaces to the repository, not new specialist domain package
   - less practical reuse for prompt starters
 
 ### Option 2
-- Description: Put Claude guidance inside `shared/`.
+- Description: Put Claude guidance inside `SHARED/`.
 - Pros:
   - avoids another top-level layer
   - keeps generic reusable guidance centralized
 - Cons:
   - mixes repository interface guidance with domain-agnostic reasoning doctrine
-  - makes `shared/` less conceptually clean
+  - makes `SHARED/` less conceptually clean
 
 ## Rationale
 The tool-facing entry layers improve usability without altering the domain package boundaries.
@@ -71,9 +71,9 @@ That is a meaningful structural improvement, but not a new reasoning domain.
 ## Impact
 - affected packages:
   - root documentation
-  - `claude/`
-  - `cursor/`
-  - `governance/`
+  - `CLAUDE/`
+  - `CURSOR/`
+  - `GOVERNANCE/`
 - backward compatibility impact:
   - low
 - maintenance implications:
@@ -87,7 +87,7 @@ That is a meaningful structural improvement, but not a new reasoning domain.
 - requires discipline to avoid duplicating package or root doctrine inside tool-facing layers
 
 ## Follow-up actions
-- [ ] Keep `claude/` aligned with root routing and package structure
-- [ ] Keep `cursor/` aligned with root routing and package structure
+- [ ] Keep `CLAUDE/` aligned with root routing and package structure
+- [ ] Keep `CURSOR/` aligned with root routing and package structure
 - [ ] Avoid turning tool-facing entry layers into duplicates of package READMEs
 - [ ] Update tool-facing entry layers when package leadership logic changes materially

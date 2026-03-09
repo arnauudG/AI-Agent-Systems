@@ -12,7 +12,7 @@ Use semantic-style versioning:
 Increase when:
 - package structure changes in a breaking way
 - orchestration logic changes materially
-- shared/package boundaries are reworked
+- SHARED/package boundaries are reworked
 - file naming or loading conventions change in ways that break existing usage
 
 ### MINOR
@@ -32,7 +32,7 @@ Increase when:
 - `1.0.0` = first stable multi-package system
 - `1.1.0` = add BPMN skill and process modeling guidance
 - `1.2.0` = add real-world playbooks
-- `2.0.0` = restructure shared/package boundaries in a breaking way
+- `2.0.0` = restructure SHARED/package boundaries in a breaking way
 
 ## Release note expectation
 Each meaningful version increment should be reflected in `CHANGELOG.md`.

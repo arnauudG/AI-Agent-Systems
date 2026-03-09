@@ -27,20 +27,20 @@ Choose one leading package based on the routing guide.
 Only add supporting packages when the task truly crosses domains.
 
 ### 3. Add playbooks only for orchestration-heavy work
-Use `shared/playbooks/` when:
+Use `SHARED/playbooks/` when:
 - multiple packages are needed
 - the initiative is end-to-end
 - a recurring scenario is being handled
 - sequencing matters across domains
 
 ### 4. Use shared only for cross-cutting reinforcement
-Use `shared/` when:
+Use `SHARED/` when:
 - stage awareness matters
 - common decision logging is needed
 - visual thinking applies across domains
 - implementation pragmatism needs reinforcement
 
-Do not use `shared/` as a replacement for package-specific logic.
+Do not use `SHARED/` as a replacement for package-specific logic.
 
 ## Recommended default load sets
 
@@ -117,7 +117,7 @@ Load:
 - `../COLLIBRA/README.md`
 - `../DATA/README.md`
 - `../AWS/README.md`
-- the most relevant playbook from `../shared/playbooks/`
+- the most relevant playbook from `../SHARED/playbooks/`
 
 Then selectively add rules, skills, and templates from each package.
 

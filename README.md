@@ -56,7 +56,7 @@ If a diagram helps explain the problem, the structure, the flow, or the ownershi
 - `AGENTS.md` — top-level orchestration doctrine for the whole system
 - `README.md` — top-level explanation of how the system works
 
-### `governance/`
+### `GOVERNANCE/`
 Repository-governance artifacts for maintaining this system over time:
 - contribution guidance
 - review criteria for repo changes
@@ -64,14 +64,14 @@ Repository-governance artifacts for maintaining this system over time:
 - changelog discipline
 - package evolution ADR templates
 
-### `claude/`
+### `CLAUDE/`
 Claude-facing entry guidance for using the repository as a reasoning framework:
 - routing guidance
 - minimal loading strategy
 - quick-start prompts
 - Claude-specific orchestration context
 
-### `cursor/`
+### `CURSOR/`
 Cursor-facing entry guidance for using the repository as a reasoning framework:
 - routing guidance
 - minimal loading strategy
@@ -79,7 +79,7 @@ Cursor-facing entry guidance for using the repository as a reasoning framework:
 - Cursor-specific orchestration context
 - compact repo rules for Cursor behavior
 
-### `shared/`
+### `SHARED/`
 Cross-cutting principles that apply across all packages:
 - common operating principles
 - stage awareness
@@ -87,7 +87,7 @@ Cross-cutting principles that apply across all packages:
 - visual thinking
 - implementation pragmatism
 
-### `shared/playbooks/`
+### `SHARED/playbooks/`
 Scenario-based orchestration guides showing how packages work together.
 
 ### `BUSINESS-ANALYSIS/`
@@ -123,7 +123,7 @@ Use this package when the main need is:
 - applying Well-Architected and delivery rigor
 - preparing for production
 
-### `svg/`
+### `SVG/`
 Use this package when the main need is:
 - creating or editing architecture diagrams, platform diagrams, or semantic visuals in SVG
 - keeping diagram structure consistent, legible, and editable
@@ -156,7 +156,7 @@ Use this package when the main need is:
 - the implementation direction is mainly technical
 - delivery architecture, infrastructure, or DevOps rigor is central
 
-### Start with `svg/` when:
+### Start with `SVG/` when:
 - the task is to produce or edit SVG diagrams (architecture, platform, process, governance)
 - diagram output must be readable, semantically structured, and safe to edit manually
 - ownership, trust boundaries, or access patterns need to be represented accurately in visuals
@@ -219,7 +219,7 @@ Use:
 
 ### Architecture or platform diagrams (SVG)
 Use:
-- `svg/` (and optionally `AWS/` for architecture content, `COLLIBRA/` for semantic/governance visuals)
+- `SVG/` (and optionally `AWS/` for architecture content, `COLLIBRA/` for semantic/governance visuals)
 
 ### Metadata/governance-driven operating model initiative
 Use:
@@ -232,16 +232,16 @@ Use:
 ## Recommended maintenance model
 
 - keep packages modular
-- keep `governance/` focused on repo evolution rather than domain content
-- keep `claude/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
-- keep `cursor/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
-- keep `shared/` small and cross-cutting
-- keep `svg/` focused on structure, semantics, and editability (not tool-specific export formats)
+- keep `GOVERNANCE/` focused on repo evolution rather than domain content
+- keep `CLAUDE/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
+- keep `CURSOR/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
+- keep `SHARED/` small and cross-cutting
+- keep `SVG/` focused on structure, semantics, and editability (not tool-specific export formats)
 - add new rules only when they are broadly reusable
 - add new skills only for repeated tasks
 - add new playbooks when multiple packages must be orchestrated together
 - record major design changes using decision logs
-- record meaningful repo-structure changes in `governance/CHANGELOG.md`
+- record meaningful repo-structure changes in `GOVERNANCE/CHANGELOG.md`
 
 ---
 

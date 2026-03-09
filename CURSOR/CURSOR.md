@@ -9,7 +9,7 @@ The repository contains multiple specialist packages:
 - DATA
 - AWS
 - shared
-- shared/playbooks
+- SHARED/playbooks
 - governance
 
 Cursor should use this layer to understand:

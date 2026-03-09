@@ -5,7 +5,7 @@ Repository-level governance artifacts used to keep this reasoning system maintai
 This folder is not a specialist delivery package like `AWS/` or `DATA/`.
 It exists to govern the repository itself.
 
-Use `governance/` for:
+Use `GOVERNANCE/` for:
 - contribution guidance
 - repo review criteria
 - versioning rules

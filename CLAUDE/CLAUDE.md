@@ -8,9 +8,9 @@ The repository contains multiple specialist packages:
 - COLLIBRA
 - DATA
 - AWS
-- shared
-- shared/playbooks
-- governance
+- SHARED
+- SHARED/playbooks
+- GOVERNANCE
 
 Claude should use this layer to understand:
 - how to route requests

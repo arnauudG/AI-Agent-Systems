@@ -9,7 +9,7 @@ Ask:
 - Is this reusable across multiple future cases?
 - Does something equivalent already exist?
 - Is this guidance stable enough to deserve a permanent file?
-- Does it belong in a package or in shared?
+- Does it belong in a package or in SHARED?
 - Would updating an existing file be better?
 
 ## Choose the right file type
@@ -40,7 +40,7 @@ Ask:
 - orchestration matters more than isolated domain guidance
 
 ## Keep shared small
-Put a file in `shared/` only if it genuinely applies across packages.
+Put a file in `SHARED/` only if it genuinely applies across packages.
 If it is domain-specific, keep it in the domain package.
 
 ## Avoid duplication

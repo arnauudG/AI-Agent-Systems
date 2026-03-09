@@ -174,7 +174,7 @@ Use:
 Optional:
 - `checklists/pr-checklist.md`
 - `templates/pr-template.md`
-- `../shared/templates/decision-log-template.md`
+- `../SHARED/templates/decision-log-template.md`
 
 Use this combination when:
 - reviewing modules
@@ -253,7 +253,7 @@ Use:
 Optional:
 - `templates/solution-design-template.md`
 - `templates/deployment-plan-template.md`
-- `../shared/templates/decision-log-template.md`
+- `../SHARED/templates/decision-log-template.md`
 
 Use this combination when:
 - planning transition states
@@ -282,7 +282,7 @@ Use this combination when:
 Use:
 - `rules/documentation-and-decision-logging.md`
 - `skills/update-decision-log.skill.md`
-- `../shared/templates/decision-log-template.md`
+- `../SHARED/templates/decision-log-template.md`
 
 Use this combination when:
 - a material design choice is made
