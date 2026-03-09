@@ -1,7 +1,7 @@
 # Loading Strategy
 
 ## Purpose
-This file explains how Claude should consume the repository without drowning in context soup.
+This file explains how to consume the repository without drowning in context soup.
 
 The core rule:
 Load the smallest relevant set of files needed for the task.
@@ -12,7 +12,7 @@ Do not load the whole repository by default.
 
 ### 1. Start small
 Begin with:
-- `CLAUDE.md`
+- the tool entry point (e.g. `CLAUDE.md`, `.cursor/rules/repo-doctrine.mdc`)
 - the relevant package README
 - the relevant package AGENTS
 
@@ -46,78 +46,78 @@ Do not use `SHARED/` as a replacement for package-specific logic.
 
 ### A. Vague business request
 Load:
-- `CLAUDE.md`
-- `routing-guide.md`
-- `../BUSINESS-ANALYSIS/README.md`
-- `../BUSINESS-ANALYSIS/AGENTS.md`
-- `../BUSINESS-ANALYSIS/rules/problem-framing.md`
-- `../BUSINESS-ANALYSIS/rules/value-and-outcomes.md`
-- `../BUSINESS-ANALYSIS/skills/frame-business-problem.skill.md`
+- tool entry point
+- `DOCTRINE/routing-guide.md`
+- `BUSINESS-ANALYSIS/README.md`
+- `BUSINESS-ANALYSIS/AGENTS.md`
+- `BUSINESS-ANALYSIS/rules/problem-framing.md`
+- `BUSINESS-ANALYSIS/rules/value-and-outcomes.md`
+- `BUSINESS-ANALYSIS/skills/frame-business-problem.skill.md`
 
 Optional:
-- `../BUSINESS-ANALYSIS/templates/business-problem-template.md`
+- `BUSINESS-ANALYSIS/templates/business-problem-template.md`
 
 ---
 
 ### B. Governance / Collibra request
 Load:
-- `CLAUDE.md`
-- `routing-guide.md`
-- `../COLLIBRA/README.md`
-- `../COLLIBRA/AGENTS.md`
-- `../COLLIBRA/rules/semantic-modeling-principles.md`
-- `../COLLIBRA/rules/business-to-technical-translation.md`
-- `../COLLIBRA/skills/translate-need-into-collibra-design.skill.md`
+- tool entry point
+- `DOCTRINE/routing-guide.md`
+- `COLLIBRA/README.md`
+- `COLLIBRA/AGENTS.md`
+- `COLLIBRA/rules/semantic-modeling-principles.md`
+- `COLLIBRA/rules/business-to-technical-translation.md`
+- `COLLIBRA/skills/translate-need-into-collibra-design.skill.md`
 
 Optional:
-- `../COLLIBRA/templates/governance-use-case-template.md`
-- `../COLLIBRA/templates/asset-model-template.md`
+- `COLLIBRA/templates/governance-use-case-template.md`
+- `COLLIBRA/templates/asset-model-template.md`
 
 ---
 
 ### C. Data product request
 Load:
-- `CLAUDE.md`
-- `routing-guide.md`
-- `../DATA/README.md`
-- `../DATA/AGENTS.md`
-- `../DATA/rules/data-product-principles.md`
-- `../DATA/rules/mvp-and-poc-discipline.md`
-- `../DATA/skills/design-data-solution.skill.md`
+- tool entry point
+- `DOCTRINE/routing-guide.md`
+- `DATA/README.md`
+- `DATA/AGENTS.md`
+- `DATA/rules/data-product-principles.md`
+- `DATA/rules/mvp-and-poc-discipline.md`
+- `DATA/skills/design-data-solution.skill.md`
 
 Optional:
-- `../DATA/templates/data-product-canvas-template.md`
-- `../DATA/templates/data-solution-design-template.md`
+- `DATA/templates/data-product-canvas-template.md`
+- `DATA/templates/data-solution-design-template.md`
 
 ---
 
 ### D. AWS architecture request
 Load:
-- `CLAUDE.md`
-- `routing-guide.md`
-- `../AWS/README.md`
-- `../AWS/AGENTS.md`
-- `../AWS/rules/architecture-principles.md`
-- `../AWS/rules/well-architected-review.md`
-- `../AWS/skills/design-solution.skill.md`
+- tool entry point
+- `DOCTRINE/routing-guide.md`
+- `AWS/README.md`
+- `AWS/AGENTS.md`
+- `AWS/rules/architecture-principles.md`
+- `AWS/rules/well-architected-review.md`
+- `AWS/skills/design-solution.skill.md`
 
 Optional:
-- `../AWS/templates/solution-design-template.md`
-- `../AWS/diagrams/diagram-types.md`
+- `AWS/templates/solution-design-template.md`
+- `AWS/diagrams/diagram-types.md`
 
 ---
 
 ### E. End-to-end initiative
 Load:
-- `CLAUDE.md`
-- `routing-guide.md`
-- `loading_strategy.md`
-- `../BUSINESS-ANALYSIS/README.md`
-- `../BUSINESS-ANALYSIS/AGENTS.md`
-- `../COLLIBRA/README.md`
-- `../DATA/README.md`
-- `../AWS/README.md`
-- the most relevant playbook from `../SHARED/playbooks/`
+- tool entry point
+- `DOCTRINE/routing-guide.md`
+- `DOCTRINE/loading-strategy.md`
+- `BUSINESS-ANALYSIS/README.md`
+- `BUSINESS-ANALYSIS/AGENTS.md`
+- `COLLIBRA/README.md`
+- `DATA/README.md`
+- `AWS/README.md`
+- the most relevant playbook from `SHARED/playbooks/`
 
 Then selectively add rules, skills, and templates from each package.
 
@@ -138,5 +138,5 @@ If the task becomes:
 - production-heavy → add AWS operational/readiness rules
 
 ## Success criterion
-Claude should have enough context to reason well,
+The agent should have enough context to reason well,
 but not so much context that it becomes a librarian lost in its own basement.

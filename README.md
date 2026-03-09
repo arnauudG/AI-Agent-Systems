@@ -26,6 +26,69 @@ It is an operating system for how agents should reason across different domains.
 
 ---
 
+## Supported tools
+
+This repo provides entry points for Claude Code, Cursor, and Claude Desktop, all sharing a single doctrine:
+
+| Tool | Entry point | Location |
+|------|------------|----------|
+| **Claude Code** | `CLAUDE.md` (root) | Root file, references `DOCTRINE/` |
+| **Cursor** | `.cursor/rules/repo-doctrine.mdc` | Always-apply rule, references `DOCTRINE/` |
+| **Claude Desktop** | `templates/claude-desktop/` | Paste-ready instructions + knowledge bundle |
+
+All tool entry points reference `DOCTRINE/` as the single source of truth for routing, loading, reasoning order, and behavioral rules.
+
+---
+
+## Three consumption modes
+
+### 1. Shared knowledge repo (standalone)
+
+Use it as a reference or clone it: reusable guidance for Collibra, SVG, business analysis, architecture (AWS), data, prompts, playbooks, and examples. Browse packages, rules, skills, and templates directly.
+
+**When you open this repo as the project:**
+- **Claude Code** reads root `CLAUDE.md`, which points at `DOCTRINE/TRANSLATION.md` and the packages.
+- **Cursor** loads `.cursor/rules/repo-doctrine.mdc` (always apply), which points at `DOCTRINE/TRANSLATION.md`.
+
+### 2. Local attachment to work repos (recommended)
+
+Attach this repo **inside** your real project so all tools see the files locally. Best option because agents are strongest when context is in the working repo.
+
+**As a git submodule:**
+
+```bash
+git submodule add <this-repo-url> .agent-kit
+```
+
+Or use a subtree if you prefer. Then add the bootstrap files to your project (see below).
+
+### 3. Native tool-specific overlays
+
+- **Claude Code:** Put the bootstrap `CLAUDE.md` in your project root so Claude follows shared guidance from `.agent-kit/`.
+- **Cursor:** Put `agent-kit.mdc` in your project's `.cursor/rules/`.
+
+**Layers together:** Local project context (your codebase) + shared agent-kit (`.agent-kit/`) + live systems via MCP (Collibra, GitHub, Jira, etc.) when needed. Stable patterns live in the repo; live truth comes from MCP.
+
+---
+
+## Bootstrap files for working repos
+
+When you attach this repo as `.agent-kit/` in a project:
+
+1. **For Claude Code:** Copy or symlink into your project root as `CLAUDE.md`:
+   - Source: [templates/bootstrap/CLAUDE.md](templates/bootstrap/CLAUDE.md)
+
+2. **For Cursor:** Copy into your project's `.cursor/rules/`:
+   - Source: [templates/bootstrap/agent-kit.mdc](templates/bootstrap/agent-kit.mdc)
+
+3. **For Claude Desktop:** Paste the project instructions or upload the knowledge bundle:
+   - Instructions: [templates/claude-desktop/project-instructions.md](templates/claude-desktop/project-instructions.md)
+   - Knowledge: [templates/claude-desktop/knowledge-bundle.md](templates/claude-desktop/knowledge-bundle.md)
+
+4. **Optional sync scripts:** To mirror skills or rules into tool-native paths, use the scripts in `scripts/` — see [scripts/README.md](scripts/README.md).
+
+---
+
 ## Repository philosophy
 
 ### 1. Start from the problem
@@ -55,6 +118,15 @@ If a diagram helps explain the problem, the structure, the flow, or the ownershi
 ### Root files
 - `AGENTS.md` — top-level orchestration doctrine for the whole system
 - `README.md` — top-level explanation of how the system works
+- `CLAUDE.md` — Claude Code entry point
+
+### `DOCTRINE/`
+Shared operating doctrine — single source of truth for all tools:
+- **`TRANSLATION.md`** — self-contained briefing (package map, routing, loading, rules)
+- `routing-guide.md` — which package leads for which request
+- `loading-strategy.md` — smallest relevant context sets
+- `quick-start-prompts.md` — reusable prompt templates
+- `repo-rules.md` — compact behavioral rules
 
 ### `GOVERNANCE/`
 Repository-governance artifacts for maintaining this system over time:
@@ -64,20 +136,18 @@ Repository-governance artifacts for maintaining this system over time:
 - changelog discipline
 - package evolution ADR templates
 
-### `CLAUDE/`
-Claude-facing entry guidance for using the repository as a reasoning framework:
-- routing guidance
-- minimal loading strategy
-- quick-start prompts
-- Claude-specific orchestration context
+### `.cursor/rules/`
+Cursor entry point (`repo-doctrine.mdc`, always-apply) when this repo is used standalone.
 
-### `CURSOR/`
-Cursor-facing entry guidance for using the repository as a reasoning framework:
-- routing guidance
-- minimal loading strategy
-- quick-start prompts
-- Cursor-specific orchestration context
-- compact repo rules for Cursor behavior
+### `templates/`
+Bootstrap files for working repos that attach this repo as `.agent-kit/`:
+- `bootstrap/CLAUDE.md` — Claude Code bootstrap
+- `bootstrap/agent-kit.mdc` — Cursor bootstrap
+- `claude-desktop/project-instructions.md` — Claude Desktop paste-ready instructions
+- `claude-desktop/knowledge-bundle.md` — Claude Desktop knowledge upload
+
+### `scripts/`
+Sync scripts for agent-kit consumption mode.
 
 ### `SHARED/`
 Cross-cutting principles that apply across all packages:
@@ -233,8 +303,8 @@ Use:
 
 - keep packages modular
 - keep `GOVERNANCE/` focused on repo evolution rather than domain content
-- keep `CLAUDE/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
-- keep `CURSOR/` focused on entry-layer routing and loading guidance rather than duplicating package doctrine
+- keep `DOCTRINE/` focused on shared operating model; do not duplicate package logic
+- keep tool entry points thin — they reference `DOCTRINE/`, not restate it
 - keep `SHARED/` small and cross-cutting
 - keep `SVG/` focused on structure, semantics, and editability (not tool-specific export formats)
 - add new rules only when they are broadly reusable

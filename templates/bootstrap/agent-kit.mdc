@@ -1,0 +1,24 @@
+---
+description: Shared agent-kit guidance — use rules and examples from .agent-kit when attached as submodule/subtree
+alwaysApply: true
+---
+
+# Shared agent-kit guidance
+
+When this project has the agent-kit attached at `.agent-kit/`, use the shared rules and examples from:
+
+- **Full doctrine:** `.agent-kit/DOCTRINE/TRANSLATION.md`
+- **Routing:** `.agent-kit/DOCTRINE/routing-guide.md`
+- **Loading:** `.agent-kit/DOCTRINE/loading-strategy.md`
+- **Business analysis, problem framing, BPMN, requirements:** `.agent-kit/BUSINESS-ANALYSIS/`
+- **Governance, semantics, Collibra, ownership, glossary:** `.agent-kit/COLLIBRA/`
+- **Data products, pipelines, lineage, data MVP:** `.agent-kit/DATA/`
+- **AWS architecture, IaC, CI/CD, delivery, Well-Architected:** `.agent-kit/AWS/`
+- **SVG diagrams, architecture diagrams, diagram semantics:** `.agent-kit/SVG/`
+- **Cross-cutting: stage awareness, decision log, playbooks:** `.agent-kit/SHARED/`
+
+**Routing:** Identify the leading package before going deep (vague → BUSINESS-ANALYSIS; semantics → COLLIBRA; data → DATA; technical/AWS → AWS; diagrams → SVG). Use `.agent-kit/DOCTRINE/TRANSLATION.md` or `.agent-kit/AGENTS.md` for full routing and loading discipline.
+
+**Prioritize local repo conventions** over shared defaults when the project explicitly documents them (e.g. project ADR, local coding standards).
+
+For broader reuse across many repos, this repo's bootstrap rules can be published on GitHub and added as **Remote Rules** in Cursor Settings → Rules.

@@ -1,7 +1,7 @@
-# Repo Rules for Cursor
+# Repo Rules
 
 ## Purpose
-This file gives Cursor a compact set of repo-wide behavioral rules for working inside this repository.
+Compact behavioral rules for working inside this repository.
 
 ## Must
 - identify the leading package before going deep

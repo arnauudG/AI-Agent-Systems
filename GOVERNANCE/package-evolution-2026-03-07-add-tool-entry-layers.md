@@ -28,12 +28,12 @@ Add tool-facing folders as repository entry layers:
 - `../CLAUDE/routing-guide.md` for package leadership decisions
 - `../CLAUDE/loading_strategy.md` for minimal context-loading discipline
 - `../CLAUDE/quick-start-prompts.md` for reusable starting prompts
-- `CURSOR/`
-- `../CURSOR/CURSOR.md` for Cursor-specific orchestration context
-- `../CURSOR/routing-guide.md` for package leadership decisions
-- `../CURSOR/loading_strategy.md` for minimal context-loading discipline
-- `../CURSOR/quick-start-prompts.md` for reusable starting prompts
-- `../CURSOR/repo-rules.md` for compact repository behavior rules
+- `.cursor/`
+- `../.cursor/CURSOR.md` for Cursor-specific orchestration context
+- `../.cursor/routing-guide.md` for package leadership decisions
+- `../.cursor/loading_strategy.md` for minimal context-loading discipline
+- `../.cursor/quick-start-prompts.md` for reusable starting prompts
+- `../.cursor/repo-rules.md` for compact repository behavior rules
 
 These layers are interfaces to the repository, not new specialist domain packages.
 
@@ -72,7 +72,7 @@ That is a meaningful structural improvement, but not a new reasoning domain.
 - affected packages:
   - root documentation
   - `CLAUDE/`
-  - `CURSOR/`
+  - `.cursor/`
   - `GOVERNANCE/`
 - backward compatibility impact:
   - low
@@ -88,6 +88,6 @@ That is a meaningful structural improvement, but not a new reasoning domain.
 
 ## Follow-up actions
 - [ ] Keep `CLAUDE/` aligned with root routing and package structure
-- [ ] Keep `CURSOR/` aligned with root routing and package structure
+- [ ] Keep `.cursor/` aligned with root routing and package structure
 - [ ] Avoid turning tool-facing entry layers into duplicates of package READMEs
 - [ ] Update tool-facing entry layers when package leadership logic changes materially

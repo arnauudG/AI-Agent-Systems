@@ -1,6 +1,6 @@
 # Quick Start Prompts
 
-Use or adapt these prompts when working with Claude.
+Use or adapt these prompts when working with this repository.
 
 ## 1. Business framing only
 Use the repository as a reasoning framework.

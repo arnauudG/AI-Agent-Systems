@@ -1,0 +1,31 @@
+---
+description: AI agent knowledge repo — routing, packages, and doctrine when this repo is the open project
+alwaysApply: true
+---
+
+# Repo doctrine (this project)
+
+This repository is the **AI system configuration** knowledge base. When working here, follow this doctrine.
+
+## Read this first
+- **Full briefing:** `DOCTRINE/TRANSLATION.md` — single-doc translation (package map, routing, loading, rules).
+- **Routing:** `DOCTRINE/routing-guide.md` — which package leads for which request.
+- **Loading:** `DOCTRINE/loading-strategy.md` — smallest relevant context; do not load the whole repo.
+- **Rules:** `DOCTRINE/repo-rules.md` — compact behavioral must / must-not rules.
+
+## Packages (from repo root)
+- **BUSINESS-ANALYSIS/** — problem framing, stakeholders, BPMN, requirements, MVP
+- **COLLIBRA/** — semantics, governance, ownership, glossary, asset models
+- **DATA/** — data products, pipelines, lineage, quality
+- **AWS/** — architecture, IaC, CI/CD, Well-Architected, delivery
+- **SVG/** — architecture/SVG diagrams, rules, skills
+- **SHARED/** — playbooks, stage awareness, decision logging, visual thinking
+
+## Routing
+Identify the leading package before going deep: vague → BUSINESS-ANALYSIS; semantics → COLLIBRA; data → DATA; technical/AWS → AWS; diagrams → SVG. Multi-package → use a playbook from SHARED/playbooks/.
+
+## Must
+Start from the real problem; preserve traceability (problem → use case → requirement → implication → implementation); prefer smallest useful scope; state leading package, stage, trade-offs, next step.
+
+## Must not
+Jump to AWS or data design if the business problem is unclear; load the entire repo by default; collapse governance/data/technical layers carelessly.
